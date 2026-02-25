@@ -1,63 +1,56 @@
-🚀 Dockerized Resume Portfolio
-
-📌 Overview
-
-This project demonstrates the fundamentals of containerization by deploying a static personal resume portfolio using Docker and Nginx (Alpine).
-
-The goal was to package a simple HTML portfolio into a lightweight Docker image that can run consistently across any environment.
+🛸 INFRASTRUCTURE AUTOMATION ENGINE 🛸
+📌 Project Overview
+This repository hosts a fully Automated CI/CD Pipeline designed to eliminate manual deployment overhead. By leveraging GitHub Actions, every code push triggers an automated workflow that builds, tags, and ships Docker images directly to Docker Hub.
 
 🛠 Tech Stack
+🤖 Automation: GitHub Actions (CI/CD)
 
-Docker – Containerization
+🐳 Containerization: Docker
 
-Nginx (Alpine) – Lightweight web server
+📦 Registry: Docker Hub
 
-HTML5 – Static frontend
+🐍 Backend: Python Flask
 
-📂 Project Structure
-.
-├── Dockerfile
-└── index.html
-🏗 How It Works
+⚡ Caching/Database: Redis
 
-The Dockerfile uses the official nginx:alpine base image
+🏗 Pipeline Architecture
+1️⃣ Continuous Integration (CI)
+The pipeline is triggered automatically on every push to the main branch.
 
-Copies index.html into the Nginx web root directory
+GitHub Actions provisions a virtual Ubuntu runner to execute the build process.
 
-Exposes port 80 inside the container
+2️⃣ Build & Distribution
+Secure Authentication: Uses GitHub Secrets to securely login to Docker Hub.
 
-Runs Nginx in the foreground
+Image Orchestration: Builds the application image and applies the latest tag for production readiness.
 
-🚀 Run Locally
-1️⃣ Clone Repository
-git clone https://github.com/Tab7sh/dockerized-resume-portfolio.git
-cd dockerized-resume-portfolio
-2️⃣ Build Docker Image
-docker build -t portfolio-app .
-3️⃣ Run Container
-docker run -d -p 8080:80 portfolio-app
+Cloud Ship: Pushes the verified image to the tabish345 Docker Hub registry.
 
-Open in your browser:
+3️⃣ Security & Secrets
+Zero Leak Policy: Sensitive credentials like DOCKERHUB_TOKEN are managed via encrypted secrets, ensuring no sensitive data is exposed in the source code.
 
-http://localhost:8080
-📊 Key Learning Outcomes
+📊 Deployment Proof
+✅ Pipeline Status
+This badge confirms that the automation engine is successfully validating and building the stack on every commit.
 
-Understanding Docker image creation
+🐳 Docker Hub Integration
+The automated image is now available for pull from the official registry.
 
-Writing a basic Dockerfile
+Registry Link: View tabish345 on Docker Hub
 
-Port mapping (host:container)
+🚀 How to Execute
+Clone the Repository:
+git clone https://github.com/Tab7sh/Infrastructure-automation-engine.git
 
-Running and managing containers
+Local Launch (Optional):
+docker-compose up -d --build
 
-Deploying static sites with Nginx
+Automated Trigger:
+Modify any file and run git push to watch the Infrastructure Automation Engine push to tabish345/dynamic-portfolio!
 
-🎯 Purpose of This Project
+💡 Key Learning Outcomes
+Transitioned from manual container management to a Full Automation Workflow.
 
-This project was created to strengthen my understanding of:
+Gained expertise in GitHub Actions and Secrets Management.
 
-Docker fundamentals
-
-Container networking
-
-Lightweight production-ready deployments
+Implemented a production-grade Cloud-Native Delivery Pipeline.
