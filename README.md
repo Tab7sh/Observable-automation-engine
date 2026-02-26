@@ -1,56 +1,58 @@
-🛸 INFRASTRUCTURE AUTOMATION ENGINE 🛸
-📌 Project Overview
-This repository hosts a fully Automated CI/CD Pipeline designed to eliminate manual deployment overhead. By leveraging GitHub Actions, every code push triggers an automated workflow that builds, tags, and ships Docker images directly to Docker Hub.
+🛸 OBSERVABLE AUTOMATION ENGINE 🛸
+📌 PROJECT OVERVIEW
+This repository represents a production-grade DevOps Ecosystem. It integrates a seamless GitHub Actions CI/CD Pipeline with a comprehensive Observability Stack. The engine not only automates the delivery of containerized microservices to Docker Hub but also provides real-time health metrics and proactive failure detection.
 
-🛠 Tech Stack
-🤖 Automation: GitHub Actions (CI/CD)
+🛠 TECH STACK & TOOLS
+🤖 CI/CD Automation: GitHub Actions
 
-🐳 Containerization: Docker
+🐳 Containerization: Docker & Docker Compose
 
-📦 Registry: Docker Hub
+🔥 Metrics Collection: Prometheus
 
-🐍 Backend: Python Flask
+📈 Visualization: Grafana Dashboards
 
-⚡ Caching/Database: Redis
+🦉 Resource Monitoring: Google cAdvisor
 
-🏗 Pipeline Architecture
-1️⃣ Continuous Integration (CI)
-The pipeline is triggered automatically on every push to the main branch.
+🐍 Backend: Python Flask with Redis Caching
 
-GitHub Actions provisions a virtual Ubuntu runner to execute the build process.
+🏗 INFRASTRUCTURE ARCHITECTURE
+1️⃣ Continuous Delivery Pipeline
+Every git push triggers a workflow that builds the latest Docker image.
 
-2️⃣ Build & Distribution
-Secure Authentication: Uses GitHub Secrets to securely login to Docker Hub.
+Secured via GitHub Secrets, the image is automatically pushed to the tabish345 Docker Hub registry.
 
-Image Orchestration: Builds the application image and applies the latest tag for production readiness.
+2️⃣ Real-Time Observability
+Prometheus scrapes high-resolution metrics from the container environment every 15 seconds.
 
-Cloud Ship: Pushes the verified image to the tabish345 Docker Hub registry.
+cAdvisor provides granular visibility into CPU, Memory, and Network throughput for all running services.
 
-3️⃣ Security & Secrets
-Zero Leak Policy: Sensitive credentials like DOCKERHUB_TOKEN are managed via encrypted secrets, ensuring no sensitive data is exposed in the source code.
+3️⃣ Proactive Alerting Logic
+A custom Grafana Alerting system is implemented to ensure high availability.
 
-📊 Deployment Proof
-✅ Pipeline Status
-This badge confirms that the automation engine is successfully validating and building the stack on every commit.
+Critical Rule: If the Portfolio service remains "Down" for more than 60 seconds, the system triggers a Firing status, alerting the administrator immediately.
 
-🐳 Docker Hub Integration
-The automated image is now available for pull from the official registry.
+📊 SYSTEM STATUS & PROOF
+Live Dashboard: Accessible at localhost:3000.
 
-Registry Link: View tabish345 on Docker Hub
+Alert Status: Currently Normal (Verified via fault-injection testing).
 
-🚀 How to Execute
-Clone the Repository:
-git clone https://github.com/Tab7sh/Infrastructure-automation-engine.git
+Image Registry: View on Docker Hub.
 
-Local Launch (Optional):
-docker-compose up -d --build
+🚀 HOW TO DEPLOY
+Clone the Engine:
 
-Automated Trigger:
-Modify any file and run git push to watch the Infrastructure Automation Engine push to tabish345/dynamic-portfolio!
+Bash
+git clone https://github.com/Tab7sh/Observable-automation-engine.git
+Launch the Stack:
 
-💡 Key Learning Outcomes
-Transitioned from manual container management to a Full Automation Workflow.
+PowerShell
+docker-compose up -d
+Verify Observability:
+Visit localhost:9090 for Prometheus queries and localhost:8081 for raw container stats.
 
-Gained expertise in GitHub Actions and Secrets Management.
+💡 KEY LEARNING OUTCOMES
+Engineered a complete CI/CD/CO (Continuous Observability) lifecycle.
 
-Implemented a production-grade Cloud-Native Delivery Pipeline.
+Implemented Infrastructure as Code (IaC) for monitoring and alerting.
+
+Optimized system reliability through Proactive Fault Detection.
